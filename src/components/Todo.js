@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, TouchableOpacity} from 'react-native'
 import { AppText } from '../components/UI/AppText'
 
 export const Todo = ({ todo, onRemove, onOpen }) => {

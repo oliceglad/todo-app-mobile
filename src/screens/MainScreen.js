@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect } from 'react'
-import { StyleSheet, View, FlatList, Image, Dimensions } from 'react-native'
+import { StyleSheet, View, FlatList, Text, Dimensions, Image } from 'react-native'
 import { AddTodo } from '../components/AddTodo'
 import { Todo } from '../components/Todo'
 import { AppButton } from '../components/UI/AppButton'
@@ -38,7 +38,8 @@ export const MainScreen = () => {
     }
 
     let content = (
-        <View stylee={{ width: width }}>
+
+        <View style={{ width: width }}>
             <FlatList
                 keyExtractor={(item) => item.id.toString()}
                 data={todos}
@@ -50,12 +51,21 @@ export const MainScreen = () => {
     if (todos.length === 0) {
         content =
             <View style={styles.imgWrap}>
-                <Image style={styles.image} source={require('../../assets/images.png')} />
+                <Text style={styles.imgWrapText}>
+                    Все задания выполнены успешно!
+                </Text>
             </View>
     }
 
     return (
         <View>
+            <View style={styles.histories}>
+                <AppButton color='#e8c6c0' style={styles.button} onPress={() => console.log('OK')}>
+                    <Text>
+                        Рекомендация дня
+                    </Text>
+                </AppButton>
+            </View>
             <AddTodo onSubmit={addTodo} />
             {content}
         </View>
@@ -66,8 +76,10 @@ const styles = StyleSheet.create({
     imgWrap: {
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10,
-        height: 300,
+    },
+    imgWrapText: {
+        textAlign: 'center',
+        fontSize: 26,
     },
     image: {
         width: '100%',
@@ -78,6 +90,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    histories: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 10,
     },
     error: {
         fontSize: 20,

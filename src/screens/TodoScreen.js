@@ -36,13 +36,13 @@ export const TodoScreen = () => {
 
             <View style={styles.buttons}>
                 <View style={styles.button}>
-                    <AppButton onPress={() => changeScreen(null)} color={THEME.GREY_COLOR}>
-                        <AntDesign name = 'back' size={20} color='#fff'/>
+                    <AppButton onPress={() => changeScreen(null)} color='#e8c8c0'>
+                        <AntDesign name = 'back' size={20} color='black'/>
                     </AppButton>
                 </View>
                 <View style={styles.button}>
-                    <AppButton color={THEME.DANGER_COLOR} onPress={() => removeTodo(todo.id)}>
-                       <FontAwesome name='remove' size={20} color = '#fff'/>
+                    <AppButton color='green' onPress={() => removeTodo(todo.id)}>
+                       <FontAwesome name='check' size={20} color = '#fff'/>
                     </AppButton>
                 </View>
             </View>

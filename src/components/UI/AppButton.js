@@ -3,11 +3,11 @@ import {StyleSheet, View, TouchableOpacity, TouchableNativeFeedback, Platform} f
 import { THEME } from '../../theme'
 import { AppTextBold } from './AppTextBold'
 
-export const AppButton = ({ children, onPress, color = THEME.MAIN_COLOR}) => {
+export const AppButton = ({ children, onPress, color = THEME.MAIN_COLOR, style}) => {
     const Wrapper = Platform.OS === 'android' ? TouchableNativeFeedback: TouchableOpacity
     return (
         <Wrapper onPress={onPress} activeOpacity={0.7}>
-            <View style={{...styles.button, backgroundColor: color}}>
+            <View style={{...styles.button, backgroundColor: color, ...style}}>
                 <AppTextBold style={styles.text}>
                     {children}
                 </AppTextBold>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     }, 
     text: {
         color: 'white'

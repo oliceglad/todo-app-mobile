@@ -28,16 +28,16 @@ export const TodoState = ({ children }) => {
   const removeTodo = id => {
     const todo = state.todos.find(t => t.id === id)
     Alert.alert(
-      'Удаление элемента',
-      `Вы уверены, что хотите удалить "${todo.title}"?`,
+      'Выполнить',
+      `Вы уверены, что выполнили "${todo.title}"?`,
       [
         {
-          text: 'Отмена',
-          style: 'cancel'
+          text: 'Нет',
+          style: 'destructive'
         },
         {
-          text: 'Удалить',
-          style: 'destructive',
+          text: 'Да',
+          style: 'cancel',
           onPress: async () => {
             changeScreen(null)
             await Http.delete(`https://todo-app-c73df-default-rtdb.firebaseio.com/todos/${id}.json`)

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import { Navbar } from './components/Navbar'
 import { THEME } from './theme'
 import { MainScreen } from './screens/MainScreen'
@@ -11,7 +11,7 @@ export const MainLayout = () => {
 
   return (
     <View style={styles.wrapper}>
-      <Navbar title='Todo App!' />
+      <Navbar title='youHealth'/>
       <View style={styles.container}>
         {todoId ? <TodoScreen /> : <MainScreen />}
       </View>

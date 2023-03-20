@@ -23,7 +23,7 @@ export const AddTodo = ({ onSubmit }) => {
                 onChangeText={text => setValue(text)}
                 value={value}
                 placeholder='Введите название дела...' />
-            <AntDesign.Button onPress={pressHandler} name = "pluscircleo">
+            <AntDesign.Button onPress={pressHandler} name = "pluscircleo" style={styles.button}>
                 Добавить
             </AntDesign.Button>
         </View>
@@ -36,7 +36,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 15
+        marginBottom: 15,
+    },
+    button: {
+        backgroundColor: '#e8c6c0'
     },
     input: {
         width: '60%',

@@ -19,6 +19,7 @@ export const Navbar = props => {
 
 const styles = StyleSheet.create({
     navbar: {
+        backgroundColor: '#e8c6c0',
         paddingTop: 50,
         paddingBottom: 20,
         alignItems: 'center',
@@ -26,10 +27,6 @@ const styles = StyleSheet.create({
     },
     navbarAndroid: {
         backgroundColor: THEME.MAIN_COLOR,
-    },
-    navbarIos: {
-        borderBottomColor: THEME.MAIN_COLOR,
-        borderBottomWidth: 1,
     },
     text: {
         color: Platform.OS === 'ios' ? THEME.MAIN_COLOR : '#fff',
